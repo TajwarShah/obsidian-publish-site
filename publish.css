@@ -552,13 +552,16 @@ table.dataTable thead th.order-column {
 /* Light theme styles */
 body.theme-light table.dataTable tbody tr:hover > .sorting_1,
 body.theme-light table.dataTable.order-column.hover tbody tr:hover > .sorting_1 {
-    box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, calc(0.023 + 0.019)); /* Darker shadow for light theme */
+    box-shadow: inset 0 0 0 9999px #0000000e;
+    box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, calc(0.023 + 0.019));
 }
 
 /* Dark theme styles */
 body.theme-dark table.dataTable tbody tr:hover > .sorting_1,
 body.theme-dark table.dataTable.order-column.hover tbody tr:hover > .sorting_1 {
-    box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.71);
+    
+    box-shadow: inset 0 0 0 9999px rgb(218, 224, 231);
+    /* box-shadow: inset 0 0 0 9999px rgba(var(--dt-column-ordering), calc(var(--dt-row-stripe-alpha) + var(--dt-column-ordering-alpha))); */
     
 }
 
@@ -621,10 +624,37 @@ button:hover {
     cursor: pointer;
 }
 
-.markdown-preview-view table {
+/* .markdown-preview-view table {
     all: unset !important;
+} */
+
+
+td, th {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+/* table.dataTable>tbody>tr:hover{
+    background-color: transparent;
+} */
+
+.dataTable tbody tr:hover {
+    background-color: #00000000 !important;
 }
 
+.dataTable tbody tr:hover td {
+    background-color: transparent !important;
+}
+
+body.theme-dark table.dataTable tbody tr:hover > .sorting_1,
+body.theme-dark table.dataTable.order-column.hover tbody tr:hover > .sorting_1 {
+    box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0) !important;
+}
+
+body.theme-dark table.dataTable tbody tr:hover {
+    box-shadow: inset 0 0 0 9999px #0806060e !important;
+    box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, calc(0.023 + 0.019)) !important;
+}
 
 
 
